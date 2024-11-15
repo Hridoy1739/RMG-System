@@ -1,9 +1,9 @@
 public class Fabric {
 
-    String id;
-    String type;
-    String color;
-    double pricePerMeter;
+   public String id;
+    public String type;
+    public String color;
+    public double pricePerMeter;
 
     double calculateCost(double meters){
 
