@@ -6,4 +6,13 @@ public class Supplier {
     public String name;
    public String contactInfo;
     List<Fabric> suppliedFabrics;
+
+
+    void addFabric(Fabric fabric){
+
+    }
+
+    List<Fabric> getSuppliedFabrics(){
+
+    }
 }
