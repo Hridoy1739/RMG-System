@@ -7,4 +7,16 @@ public class Order {
     Date orderDate;
     List<Garment> garments;
     double totalAmount;
+
+
+    void addGarment(Garment garment){
+
+    }
+
+    double calculateTotalAmount(){
+
+    }
+    void printOrderDetails(){
+
+    }
 }
