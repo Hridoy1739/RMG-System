@@ -3,8 +3,8 @@ import java.util.List;
 
 public class Order {
 
-    String orderId;
-    Date orderDate;
+   public String orderId;
+    public Date orderDate;
     List<Garment> garments;
     double totalAmount;
 
