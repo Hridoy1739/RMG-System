@@ -4,4 +4,8 @@ public class Fabric {
     String type;
     String color;
     double pricePerMeter;
+
+    double calculateCost(double meters){
+
+    }
 }
