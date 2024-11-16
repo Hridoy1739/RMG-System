@@ -6,6 +6,9 @@ public class Fabric {
     public double pricePerMeter;
 
     double calculateCost(double meters){
+return pricePerMeter*meters;
+
+
 
     }
 }
