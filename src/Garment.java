@@ -7,8 +7,9 @@ public class Garment {
     public String color;
     public double price;
     public int stockQuantity;
+    public Fabric fabric;
 
-    public Garment(String id, String name, String description, String size, String color, double price, int stockQuantity){
+    public Garment(String id, String name, String description, String size, String color, double price, int stockQuantity,Fabric fabric){
         this.id = id;
         this.name = name;
         this.description = description;

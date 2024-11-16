@@ -51,6 +51,8 @@ public class Main {
         fabric02.color = "Red, White, Black and Blue";
         fabric02.pricePerMeter = 150.0;
         supplier.addFabric(fabric);
+        supplier.addFabric(fabric02);
+
         System.out.println("Supplier: \n" + supplier.name + ",\n " + supplier.contactInfo);
 
         System.out.println("\nFabrics Supplied:");
@@ -69,5 +71,30 @@ public class Main {
         order.addGarment(garment1);
         order.addGarment(garment2);
         order.printOrderDetails();
+
+
+
+        Customer customer = new Customer("C001", "Md. Shanawaz Fahim Hridoy", "hridoy2305101739@diu.edu.bd", "+88018 6077 1414");
+        customer.displayCustomerDetails();
+        customer.placeOrder(order);
+        Order order2 = new Order("2", orderDate);
+        order2.addGarment(garment2);
+        customer.placeOrder(order2);
+        System.out.println("\nOrders Placed by Customer:");
+        for (Order customerOrder : customer.viewOrders()) {  // Renamed 'order' to 'customerOrder'
+            System.out.println("Order ID: " + customerOrder.orderId);
+            System.out.println("Order Date: " + customerOrder.orderDate);
+            System.out.println("Garments in Order:");
+            for (Garment g : customerOrder.getGarments()) {
+                System.out.println("Garment ID: " + g.garmentId);
+                System.out.println("Garment Name: " + g.name);
+            }
+            System.out.println();  // Blank line for clarity
+        }
+
     }
+
+
 }
+
+
