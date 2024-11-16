@@ -1,14 +1,26 @@
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.util.Date;
+
 public class Main {
     public static void main(String[] args) {
 
+        // Creating Fabric instance (to be passed as the last argument in Garment constructor)
+        Fabric fabric1 = new Fabric();
+        fabric1.id = "1001";
+        fabric1.type = "Silk A1 Grade";
+        fabric1.color = "Red, Green, Blue";
+        fabric1.pricePerMeter = 100;
+
         // IMPLEMENTATION FOR GARMENT CLASS.
-        Garment dekoGarment = new Garment("number1", "T-shirt", "Polo T-shirt", "Availabe S,M,L, XL", "Red, Gree, Blue, Black", 1500.00, 100);
+        Garment dekoGarment = new Garment("number1", "T-shirt", "Polo T-shirt", "Available S,M,L, XL", "Red, Green, Blue, Black", 1500.00, 100, fabric1);
         dekoGarment.updateStock(50);
         System.out.println("\n");
         System.out.println("After 2nd shifting, Quantity is: " + dekoGarment.stockQuantity);
         double discountedPrice = dekoGarment.calculateDiscountPrice(10);
         System.out.println("Discount Price: " + discountedPrice);
         System.out.println("\n");
+
         //IMPLEMENTATION FOR FABRIC CLASS
         Fabric fabric = new Fabric();
         fabric.id = "1001";
@@ -27,8 +39,7 @@ public class Main {
         System.out.println("\n");
 
 
-        //SUPPLIER CLAASS IMPLEMENTATION
-
+        //SUPPLIER CLASS IMPLEMENTATION
         Supplier supplier = new Supplier();
         supplier.id = "1";
         supplier.name = "Md. Shanawaz Fahim Hridoy";
@@ -48,7 +59,15 @@ public class Main {
             System.out.println("Fabric Type: " + f.type);
             System.out.println("Fabric Color Options: " + f.color);
             System.out.println("Price Per Meter: " + f.pricePerMeter);
-
         }
+
+        System.out.println("\n");
+        Date orderDate = Date.from(ZonedDateTime.now().toInstant());
+        Garment garment1 = new Garment("G001", "T-shirt", "Polo T-shirt", "Available S,M,L, XL", "Red, Green", 1500.00, 50, fabric1);
+        Garment garment2 = new Garment("G002", "Pants", "Casual Pants", "Available M,L, XL", "Black, Blue", 1200.00, 30, fabric1);
+        Order order = new Order("1", orderDate);
+        order.addGarment(garment1);
+        order.addGarment(garment2);
+        order.printOrderDetails();
     }
 }
