@@ -8,7 +8,7 @@ public class Fabric {
     double calculateCost(double meters){
 return pricePerMeter*meters;
 
-
+       // System.out.println("Pull push");
 
     }
 }
